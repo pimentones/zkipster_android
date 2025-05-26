@@ -1,0 +1,30 @@
+appId: com.zkipster.android
+# alternative way to launch the app
+# runFlowlaunchActivity: com.zkipster.android/.view.splash.SplashActivity
+tags:
+  - android
+  - passing
+---
+# this is code is used to restart the app everytime with every new test run for a specific folder, although this was not working when running zkipster
+# - launchApp:
+#     appId: com.zkipster.android
+#     clearState: true
+- tapOn: "Browse Demo Account"
+- tapOn: "OK"
+- tapOn: "MC Gameday 14"
+- tapOn: "Skybox ARKANSAS"
+- tapOn: "Search Guests"
+- inputText: "Hampton"
+- tapOn:
+    text: "Hampton"
+    index: 1
+- tapOn:
+    text: "Check-In"
+    index: 1
+- assertVisible:
+    text: "Hold to Revert Check-in"
+    enabled: true
+- tapOn:
+    text: "Back"
+    index: 0
+- assertVisible: "1 Checked"

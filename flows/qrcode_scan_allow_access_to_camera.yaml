@@ -1,0 +1,25 @@
+appId: com.zkipster.android
+# alternative way to launch the app
+# runFlowlaunchActivity: com.zkipster.android/.view.splash.SplashActivity
+tags:
+  - android
+  - passing
+---
+# - launchApp:
+#     appId: com.zkipster.android
+#     clearState: true
+- tapOn: "Browse Demo Account"
+- tapOn: "OK"
+- tapOn: "MC Gameday 14"
+- tapOn: "QR Scan"
+- runFlow:
+    when:
+      visible:
+        id: "com.android.permissioncontroller:id/permission_message"
+    commands:
+      - tapOn:
+          id: "com.android.permissioncontroller:id/permission_allow_foreground_only_button"
+- assertVisible:
+    id: "com.zkipster.android:id/tvPlaceBarcode"
+- assertVisible:
+    id: "com.zkipster.android:id/ivQrCodePlaceholder"

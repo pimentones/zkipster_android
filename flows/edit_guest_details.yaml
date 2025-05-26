@@ -1,0 +1,25 @@
+appId: com.zkipster.android
+tags:
+  - android
+  - passing
+---
+# - launchApp:
+#     appId: com.zkipster.android
+#     clearState: true
+- tapOn: "Browse Demo Account"
+- tapOn: "OK"
+- tapOn: "Past Events"
+- tapOn: "Design Rocks! Auction"
+- tapOn: "Sessions"
+- tapOn: "Session #1"
+- tapOn: "Dillard"
+- tapOn: "Edit"
+- tapOn:
+    id: "com.zkipster.android:id/etEditGuestValue"
+    index: 1
+- eraseText
+- inputText: "Barry"
+- tapOn: "Save"
+- assertVisible: "Dillard Barry"
+- tapOn: "Back"
+- assertVisible: "Barry"

@@ -1,0 +1,21 @@
+appId: com.zkipster.android
+# alternative way to launch the app
+# runFlowlaunchActivity: com.zkipster.android/.view.splash.SplashActivity
+tags:
+  - android
+  - passing
+---
+# - launchApp:
+#     appId: com.zkipster.android
+#     clearState: true
+- tapOn: "Browse Demo Account"
+- tapOn: "OK"
+- tapOn: "MC Gameday 14"
+- tapOn: "QR Scan"
+- assertVisible:
+    text: "Hold to Revert Check-in"
+    enabled: true
+- tapOn:
+    text: "Back"
+    index: 0
+- assertVisible: "1 Checked"
