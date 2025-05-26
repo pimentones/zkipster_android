@@ -1,4 +1,6 @@
 appId: com.zkipster.android
+# alternative way to launch the app
+# runFlowlaunchActivity: com.zkipster.android/.view.splash.SplashActivity
 tags:
   - android
   - passing
